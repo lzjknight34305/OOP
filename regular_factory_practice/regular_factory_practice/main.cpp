@@ -78,8 +78,8 @@ public:
 };
 
 int main(int argc, const char * argv[]) {
-    StudentFactory *stf = new StudentFactory();
-    VolunteerFactory *vtf = new VolunteerFactory();
+    baseFactory *stf = new StudentFactory();
+    baseFactory *vtf = new VolunteerFactory();
     Element *std1 = stf->CreateElement("Student #1");
     Element *std2 = stf->CreateElement("Student #2");
     Element *vt1 = vtf->CreateElement("Volunteer #1");
