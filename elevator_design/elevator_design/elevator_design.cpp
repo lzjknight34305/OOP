@@ -7,6 +7,8 @@
 //
 
 #include "elevator_design.hpp"
+ControlSys* ControlSys :: p_instance = NULL;
+
 //Advanced, what if multiple users are waiting at the same time?
 //Build a set and sort in order, every time move the elevator to closest place
 void ControlSys:: SetPickUpRequest(User *usr, Direction dir) {

@@ -9,7 +9,7 @@
 
 
 int main(int argc, const char * argv[]) {
-    ControlSys *cs = ControlSys :: getInstance(10);
+    ControlSys *cs = ControlSys :: getInstance();
     User *Tom = new User("Tom", cs, 3);
     User *Tony = new User("Tony", cs, 2);
     

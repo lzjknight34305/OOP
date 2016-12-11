@@ -52,11 +52,11 @@ private:
 
 class ControlSys {
 private:
-    ControlSys(int nfloors) {
-        this->nfloors = nfloors;
+    ControlSys() {
+        this->nfloors = 10;
         subject_list.resize(nfloors);
     }
-    static ControlSys *instance;
+    static ControlSys *p_instance;
     Elevator *elev;
     set<int> up_set;
     set<int> down_set;
@@ -64,11 +64,11 @@ private:
     int nfloors;
     void NotifyUsers(int floor);
 public:
-    static ControlSys *getInstance(int nfloors) {
-        if (!instance) {
-            instance = new ControlSys(nfloors);
+    static ControlSys *getInstance() {
+        if (NULL == p_instance) {
+            p_instance = new ControlSys();
         }
-        return instance;
+        return p_instance;
     }
     
     //Advaned, what if multiple users are waiting at the same time?
